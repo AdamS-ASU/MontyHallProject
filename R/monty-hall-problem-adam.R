@@ -39,9 +39,13 @@ create_game <- function()
 #' @description
 #' New monty hall game selecting random door 1-3
 #' @details
+#' Assign doors 1-3, add sample function to randomize selection
 #' @param 
+#' Doors assigned 1-3, sample random selection, a.pick assigned as action
 #' @return 
+#' a.pick returns one randomized door 1-3
 #' @examples
+#' door 1,2, or 3 selected
 #' @export
 select_door <- function( )
 {
@@ -55,10 +59,15 @@ select_door <- function( )
 #' @title
 #' Select Goat Door
 #' @description
+#' Goat door is assigned here as a continuation of previous actions
 #' @details
+#' Assign goat door is not a car and not my selection
 #' @param 
+#' Goat door is 1 door selected not a.pick and not a car
 #' @return 
+#' return 1 door from limited selections
 #' @examples
+#' goat door opened as door 1/2/ or 3 depending on initial pick
 #' @export
 open_goat_door <- function( game, a.pick )
 {
@@ -82,10 +91,15 @@ open_goat_door <- function( game, a.pick )
 #' @title
 #' Select Stay or Change
 #' @description
+#' Continue previous logic and make a selection fo stay or change
 #' @details
+#' Choose either stay or change based on previous doat door opened
 #' @param 
+#' doors not equal to goat and original/ or switched
 #' @return 
+#' a door not specified
 #' @examples
+#' return a.pick door (1) if stay or return door (not opened) as 3
 #' @export
 change_door <- function( stay=T, opened.door, a.pick )
 {
@@ -108,7 +122,9 @@ change_door <- function( stay=T, opened.door, a.pick )
 #' @title
 #' Determine winner
 #' @description
+#' determine if the door you selected final is goat or car
 #' @details
+#' winner checks if car = T, loser if car = F
 #' @param 
 #' @return 
 #' @examples
@@ -132,9 +148,13 @@ determine_winner <- function( final.pick, game )
 #' @title
 #' play full game
 #' @description
+#' Play the full game with a new random selection function
 #' @details
+#' Run complete game code and choose stay or switch
 #' @param 
+#' return results based on selection of stay or switch
 #' @return 
+#' return 'WIN' or 'LOSE'
 #' @examples
 #' @export
 play_game <- function( )
@@ -164,9 +184,13 @@ play_game <- function( )
 #' @title
 #' Play x number of games
 #' @description
+#' Play the full function of the game assigned unmber of times
 #' @details
+#' assign the number of times to play the game, 100, set the collector and iterator
 #' @param 
+#' n = 100 game splayed
 #' @return 
+#' return win percentages based on N played
 #' @examples
 #' @export
 play_n_games <- function( n=100 )
